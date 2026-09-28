@@ -119,5 +119,5 @@ def chunk_document(document_id: str, pages, size: int = 1200, overlap: int = 180
                     raise ValueError("Document produces too many chunks.")
                 if end == len(section_text):
                     break
-                start = end - overlap
+                start = max(start + 1, end - overlap)
     return chunks

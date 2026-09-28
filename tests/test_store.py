@@ -85,3 +85,9 @@ def test_lexical_mode_does_not_silently_fake_semantic(tmp_path):
     store = Store(tmp_path)
     with pytest.raises(ValueError, match="disabled"):
         store.search("database", "dense")
+
+
+def test_large_overlap_still_makes_forward_progress():
+    chunks = chunk_document("doc", [(1, ("short line\n" * 35))], size=100, overlap=90)
+    assert chunks and len(chunks) < 350
+    assert chunks[-1].text.endswith("short line")

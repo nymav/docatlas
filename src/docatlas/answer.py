@@ -29,6 +29,10 @@ class ProviderError(Exception):
     pass
 
 
+class ModelAbstention(Exception):
+    pass
+
+
 def normalize_quote(value):
     return " ".join(value.split()).casefold()
 
@@ -47,7 +51,11 @@ def validate_claims(payload, hits):
         if not all(isinstance(v, str) for v in (text, quote, chunk_id)):
             raise ProviderError("Malformed claim.")
         hit = by_id.get(chunk_id)
-        if not hit or not 12 <= len(quote) <= 1600 or not 1 <= len(text) <= 1600:
+        if (
+            not hit
+            or not 12 <= len(normalize_quote(quote)) <= 1600
+            or not 1 <= len(text.strip()) <= 1600
+        ):
             raise ProviderError("An answer contained an invalid citation.")
         if normalize_quote(quote) not in normalize_quote(hit["text"]):
             raise ProviderError("An answer quoted evidence that was not retrieved.")
@@ -85,7 +93,10 @@ def generate(question, hits, settings, client=None):
         response = client.post(settings.llm_url + "/chat/completions", headers=headers, json=body)
         response.raise_for_status()
         data = response.json()
-        claims = validate_claims(json.loads(data["choices"][0]["message"]["content"]), hits)
+        payload = json.loads(data["choices"][0]["message"]["content"])
+        if isinstance(payload, dict) and payload.get("claims") == []:
+            raise ModelAbstention
+        claims = validate_claims(payload, hits)
         return claims, data.get("usage", {})
     except (httpx.HTTPError, ValueError, KeyError, IndexError, TypeError) as exc:
         raise ProviderError("Generation failed. Retrieved evidence is still available.") from exc
@@ -116,6 +127,13 @@ def answer(question, hits, settings, client=None):
             "message": "Answer with verified source quotes. Check the evidence for meaning and completeness.",
             "claims": claims,
             "usage": usage,
+        }
+    except ModelAbstention:
+        return {
+            "status": "insufficient_evidence",
+            "message": "The retrieved passages do not support an answer to this question.",
+            "claims": [],
+            "usage": {},
         }
     except ProviderError:
         return {

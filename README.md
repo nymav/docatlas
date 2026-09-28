@@ -8,6 +8,8 @@ through an OpenAI-compatible model. Every generated claim must reference a retri
 passage and include a quote verified against that passage. The browser workspace
 includes a document library, source inspection, retrieval comparison and system metrics.
 
+![DocAtlas workspace](docs/workspace.png)
+
 ## Measured, not assumed
 
 A local development evaluation over **12 public FastAPI pages, 223 passages and 30
