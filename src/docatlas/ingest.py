@@ -106,7 +106,15 @@ def chunk_document(document_id: str, pages, size: int = 1200, overlap: int = 180
                 if text:
                     ordinal = len(chunks)
                     key = f"{document_id}:{page}:{ordinal}:{text}"
-                    chunks.append(Chunk(hashlib.sha256(key.encode()).hexdigest()[:24], text, section, page, ordinal))
+                    chunks.append(
+                        Chunk(
+                            hashlib.sha256(key.encode()).hexdigest()[:24],
+                            text,
+                            section,
+                            page,
+                            ordinal,
+                        )
+                    )
                 if len(chunks) > MAX_CHUNKS:
                     raise ValueError("Document produces too many chunks.")
                 if end == len(section_text):

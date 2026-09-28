@@ -6,7 +6,7 @@ import time
 import uuid
 from collections import Counter, deque
 from pathlib import Path
-from typing import Literal
+from typing import Annotated, Literal
 
 from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.responses import JSONResponse
@@ -41,7 +41,9 @@ def create_app(settings=None, encoder=None):
     if settings.embeddings == "fastembed" and encoder is None:
         encoder = LocalEncoder(settings.embedding_model, settings.data_dir / "models")
     store = Store(settings.data_dir, encoder)
-    app = FastAPI(title="DocAtlas", version="1.0.0", docs_url=None, redoc_url=None, openapi_url=None)
+    app = FastAPI(
+        title="DocAtlas", version="1.0.0", docs_url=None, redoc_url=None, openapi_url=None
+    )
     app.state.store = store
     app.state.settings = settings
     counters = Counter()
@@ -55,8 +57,12 @@ def create_app(settings=None, encoder=None):
         request_id = str(uuid.uuid4())
         start = time.perf_counter()
         if request.url.path.startswith("/api/"):
-            if settings.api_key and not secrets.compare_digest(request.headers.get("x-api-key", ""), settings.api_key):
-                return JSONResponse({"detail": "A valid workspace API key is required."}, status_code=401)
+            if settings.api_key and not secrets.compare_digest(
+                request.headers.get("x-api-key", ""), settings.api_key
+            ):
+                return JSONResponse(
+                    {"detail": "A valid workspace API key is required."}, status_code=401
+                )
             # Do not trust forwarded headers from arbitrary clients.
             client = request.client.host if request.client else "unknown"
             now = time.monotonic()
@@ -68,14 +74,26 @@ def create_app(settings=None, encoder=None):
                 while window and window[0] <= now - 60:
                     window.popleft()
                 if len(window) >= settings.rate_limit:
-                    return JSONResponse({"detail": "Rate limit reached. Try again shortly."}, status_code=429, headers={"Retry-After": "60"})
+                    return JSONResponse(
+                        {"detail": "Rate limit reached. Try again shortly."},
+                        status_code=429,
+                        headers={"Retry-After": "60"},
+                    )
                 window.append(now)
             if request.method not in {"GET", "HEAD", "OPTIONS"}:
                 # Same-origin web UI; API callers without Origin may use API keys.
                 origin = request.headers.get("origin")
                 if origin and origin != str(request.base_url).rstrip("/"):
-                    return JSONResponse({"detail": "Cross-origin writes are not accepted."}, status_code=403)
+                    return JSONResponse(
+                        {"detail": "Cross-origin writes are not accepted."}, status_code=403
+                    )
             raw_length = request.headers.get("content-length", "0")
+            if (
+                request.url.path == "/api/documents"
+                and request.method == "POST"
+                and "content-length" not in request.headers
+            ):
+                return JSONResponse({"detail": "Uploads require Content-Length."}, status_code=411)
             try:
                 if int(raw_length) > (settings.max_upload_mb + 1) * 1024 * 1024:
                     return JSONResponse({"detail": "Request too large."}, status_code=413)
@@ -86,16 +104,22 @@ def create_app(settings=None, encoder=None):
             response = await call_next(request)
         except Exception:
             logger.exception("request_failed id=%s", request_id)
-            response = JSONResponse({"detail": "Unexpected server error.", "request_id": request_id}, status_code=500)
+            response = JSONResponse(
+                {"detail": "Unexpected server error.", "request_id": request_id}, status_code=500
+            )
         elapsed = (time.perf_counter() - start) * 1000
         with state_lock:
             counters[f"http_{response.status_code}"] += 1
             durations.append(elapsed)
-        response.headers.update({
-            "X-Request-ID": request_id, "X-Content-Type-Options": "nosniff",
-            "Referrer-Policy": "no-referrer", "X-Frame-Options": "DENY",
-            "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
-        })
+        response.headers.update(
+            {
+                "X-Request-ID": request_id,
+                "X-Content-Type-Options": "nosniff",
+                "Referrer-Policy": "no-referrer",
+                "X-Frame-Options": "DENY",
+                "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'",
+            }
+        )
         if request.url.path.startswith("/api/"):
             response.headers["Cache-Control"] = "no-store"
         return response
@@ -108,9 +132,14 @@ def create_app(settings=None, encoder=None):
 
     @app.get("/api/config")
     def config():
-        return {"version": "1.0.0", "modes": ["bm25", "dense", "hybrid"] if encoder else ["bm25"],
-                "default_mode": "hybrid" if encoder else "bm25", "generation": bool(settings.llm_url and settings.llm_model),
-                "embedding_model": encoder.name if encoder else None, "max_upload_mb": settings.max_upload_mb}
+        return {
+            "version": "1.0.0",
+            "modes": ["bm25", "dense", "hybrid"] if encoder else ["bm25"],
+            "default_mode": "hybrid" if encoder else "bm25",
+            "generation": bool(settings.llm_url and settings.llm_model),
+            "embedding_model": encoder.name if encoder else None,
+            "max_upload_mb": settings.max_upload_mb,
+        }
 
     @app.get("/api/documents")
     def documents():
@@ -124,7 +153,7 @@ def create_app(settings=None, encoder=None):
         return result
 
     @app.post("/api/documents", status_code=201)
-    async def upload(file: UploadFile = File(...), source: str = Form(default="")):
+    async def upload(file: Annotated[UploadFile, File()], source: Annotated[str, Form()] = ""):
         limit = settings.max_upload_mb * 1024 * 1024
         data = await file.read(limit + 1)
         await file.close()
@@ -157,7 +186,12 @@ def create_app(settings=None, encoder=None):
         start = time.perf_counter()
         async with work_slots:
             hits = await asyncio.to_thread(run_search, query)
-        return {"hits": hits, "mode": query.mode, "latency_ms": round((time.perf_counter() - start) * 1000, 2), "request_id": request.state.request_id}
+        return {
+            "hits": hits,
+            "mode": query.mode,
+            "latency_ms": round((time.perf_counter() - start) * 1000, 2),
+            "request_id": request.state.request_id,
+        }
 
     @app.post("/api/ask")
     async def ask(query: Query, request: Request):
@@ -167,7 +201,13 @@ def create_app(settings=None, encoder=None):
             result = await asyncio.to_thread(answer, query.question, hits, settings)
         with state_lock:
             counters[result["status"]] += 1
-        return {**result, "hits": hits, "mode": query.mode, "latency_ms": round((time.perf_counter() - start) * 1000, 2), "request_id": request.state.request_id}
+        return {
+            **result,
+            "hits": hits,
+            "mode": query.mode,
+            "latency_ms": round((time.perf_counter() - start) * 1000, 2),
+            "request_id": request.state.request_id,
+        }
 
     @app.post("/api/feedback", status_code=201)
     def feedback(value: Feedback):
@@ -178,7 +218,13 @@ def create_app(settings=None, encoder=None):
     def metrics():
         with state_lock:
             ordered = sorted(durations)
-            return {"counts": dict(counters), "recent_requests": len(ordered), "p95_ms": round(ordered[min(int(len(ordered) * .95), len(ordered) - 1)], 2) if ordered else 0}
+            return {
+                "counts": dict(counters),
+                "recent_requests": len(ordered),
+                "p95_ms": round(ordered[min(int(len(ordered) * 0.95), len(ordered) - 1)], 2)
+                if ordered
+                else 0,
+            }
 
     @app.get("/api/openapi.json")
     def schema():
