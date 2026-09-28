@@ -1,0 +1,26 @@
+services:
+  docatlas:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      DOCATLAS_API_KEY: ${DOCATLAS_API_KEY:?Set a workspace API key in .env}
+      DOCATLAS_EMBEDDINGS: ${DOCATLAS_EMBEDDINGS:-fastembed}
+      DOCATLAS_EMBEDDING_MODEL: ${DOCATLAS_EMBEDDING_MODEL:-BAAI/bge-small-en-v1.5}
+      DOCATLAS_LLM_URL: ${DOCATLAS_LLM_URL:-}
+      DOCATLAS_LLM_MODEL: ${DOCATLAS_LLM_MODEL:-}
+      DOCATLAS_LLM_KEY: ${DOCATLAS_LLM_KEY:-}
+    volumes:
+      - docatlas-data:/app/data
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m,mode=1777
+    mem_limit: 2g
+    cpus: 2
+volumes:
+  docatlas-data:

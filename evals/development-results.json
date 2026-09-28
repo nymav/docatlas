@@ -1,0 +1,1947 @@
+{
+  "created_at": "2026-09-28T14:21:56.929604+00:00",
+  "dataset_sha256": "655afed8da1446bf11e1e325474adafcebfbab799386d5b374ecb90fe1cce0ba",
+  "corpus_fingerprint": "ea6de6cc31a09acc",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "k": 5,
+  "min_dense_score": 0.55,
+  "case_count": 30,
+  "modes": {
+    "bm25": {
+      "summary": {
+        "recall": 0.9583,
+        "mrr": 0.809,
+        "ndcg": 0.8468,
+        "unanswerable_abstention_rate": 1,
+        "answerable_false_abstention_rate": 0.0417,
+        "warm_p95_ms": 1.259,
+        "count": 30
+      },
+      "categories": {
+        "background": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.341,
+          "count": 3
+        },
+        "cors": {
+          "recall": 1.0,
+          "mrr": 0.8333,
+          "ndcg": 0.877,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0.3333,
+          "warm_p95_ms": 1.246,
+          "count": 3
+        },
+        "dependencies": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.13,
+          "count": 2
+        },
+        "deployment": {
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.4307,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.168,
+          "count": 1
+        },
+        "errors": {
+          "recall": 0.6667,
+          "mrr": 0.6667,
+          "ndcg": 0.6667,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.15,
+          "count": 3
+        },
+        "parameters": {
+          "recall": 1.0,
+          "mrr": 0.7083,
+          "ndcg": 0.7827,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.229,
+          "count": 4
+        },
+        "security": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.229,
+          "count": 1
+        },
+        "testing": {
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 0.8155,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.197,
+          "count": 2
+        },
+        "unanswerable": {
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "unanswerable_abstention_rate": 1,
+          "answerable_false_abstention_rate": null,
+          "warm_p95_ms": 1.151,
+          "count": 6
+        },
+        "validation": {
+          "recall": 1.0,
+          "mrr": 0.8667,
+          "ndcg": 0.9,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 1.259,
+          "count": 5
+        }
+      },
+      "cases": [
+        {
+          "id": "optional-query",
+          "category": "parameters",
+          "question": "How do I make a query parameter optional?",
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.179,
+          "retrieved_ids": [
+            "47a17fd4d63ed8d95bdf90f5",
+            "fdea33ddb8da91f558aabeb4",
+            "fa2c90bdef752b461ad03d13",
+            "7bd3e225af1a5f4c4e9e59c0",
+            "0cd0cda85b79f702be2c8168"
+          ]
+        },
+        {
+          "id": "query-syntax",
+          "category": "parameters",
+          "question": "What separates query key-value pairs in a URL?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.229,
+          "retrieved_ids": [
+            "ceac415cd114b8e78377eb3f",
+            "47a17fd4d63ed8d95bdf90f5",
+            "998dc10c9dab4bc9dd690530",
+            "a50494a0cb83cb66b514763a",
+            "2208f3a889b34286be9a9b24"
+          ]
+        },
+        {
+          "id": "query-default",
+          "category": "parameters",
+          "question": "Can query parameters have default values?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.14,
+          "retrieved_ids": [
+            "47a17fd4d63ed8d95bdf90f5",
+            "998dc10c9dab4bc9dd690530",
+            "a50494a0cb83cb66b514763a",
+            "3f094cc7eec867dd2cda795e",
+            "c5c296f6a9cdec25e3fae5b5"
+          ]
+        },
+        {
+          "id": "query-conversion",
+          "category": "parameters",
+          "question": "Are query parameter values converted to their declared Python types?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.134,
+          "retrieved_ids": [
+            "ceac415cd114b8e78377eb3f",
+            "7601951602a87e6e0e74a6ae",
+            "47a17fd4d63ed8d95bdf90f5",
+            "3f094cc7eec867dd2cda795e",
+            "0cd0cda85b79f702be2c8168"
+          ]
+        },
+        {
+          "id": "body-model",
+          "category": "validation",
+          "question": "Which class should my request data model inherit from?",
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.089,
+          "retrieved_ids": [
+            "594d3dda0428fc7a2361801c",
+            "353de85c368884ffd1f90974",
+            "0cd0cda85b79f702be2c8168",
+            "9513c8208cd8e6998795f5d1",
+            "8a0dd3d893e8970dc3157f62"
+          ]
+        },
+        {
+          "id": "optional-body",
+          "category": "validation",
+          "question": "What makes a model attribute not required?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.145,
+          "retrieved_ids": [
+            "0cd0cda85b79f702be2c8168",
+            "fe70ea3342f5a862cc03be4a",
+            "69af9c2bfac5a1d4166b9e97",
+            "47a17fd4d63ed8d95bdf90f5",
+            "288e0b7cdc0ae354b182a386"
+          ]
+        },
+        {
+          "id": "response-priority",
+          "category": "validation",
+          "question": "If I set both a return type and response_model, which one is used?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.259,
+          "retrieved_ids": [
+            "eb543a5ca72b6c2813b3f1ed",
+            "1afef50c73f1b36b56ce397d",
+            "f233876fa41a976596d4b51c",
+            "917bdeac9b0fbae920b3e804",
+            "0a6cbc459e2d331e3f658a6d"
+          ]
+        },
+        {
+          "id": "disable-response",
+          "category": "validation",
+          "question": "How can I disable creating a response model for a path operation?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.204,
+          "retrieved_ids": [
+            "eb543a5ca72b6c2813b3f1ed",
+            "917bdeac9b0fbae920b3e804",
+            "3334d5b7202929e5e927eb44",
+            "3de501b607f413a54b36c5eb",
+            "d77e16d57b9b4324b4755b0d"
+          ]
+        },
+        {
+          "id": "response-filter",
+          "category": "validation",
+          "question": "Does the return type limit which output fields are returned?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.138,
+          "retrieved_ids": [
+            "de7b028ec9cb27d27ba45903",
+            "288e0b7cdc0ae354b182a386",
+            "0a6cbc459e2d331e3f658a6d",
+            "f233876fa41a976596d4b51c",
+            "ff144321d9b46cccb13e50fa"
+          ]
+        },
+        {
+          "id": "http-raise",
+          "category": "errors",
+          "question": "Do I return HTTPException or raise it?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.069,
+          "retrieved_ids": [
+            "3c2998b3dd93aa41ba3ca114",
+            "d46f6c6be4a9b4061c4c6127",
+            "d3536b657de0fa5cee271352",
+            "48244378aef80b7adc1df5ff",
+            "7bd3e225af1a5f4c4e9e59c0"
+          ]
+        },
+        {
+          "id": "error-detail",
+          "category": "errors",
+          "question": "Can HTTPException detail contain a dictionary instead of a string?",
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.15,
+          "retrieved_ids": [
+            "2565c05b136e77fbb48f547a",
+            "d46f6c6be4a9b4061c4c6127",
+            "472024208bad1fe41554b7b9",
+            "df2330bc60ad7a14b594e966",
+            "48244378aef80b7adc1df5ff"
+          ]
+        },
+        {
+          "id": "error-handler",
+          "category": "errors",
+          "question": "How do I register a custom exception handler?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.072,
+          "retrieved_ids": [
+            "e4292f9f143d9e4764f5532e",
+            "d46f6c6be4a9b4061c4c6127",
+            "9b3c8d367ea44974d6ba0d04",
+            "d3536b657de0fa5cee271352",
+            "472024208bad1fe41554b7b9"
+          ]
+        },
+        {
+          "id": "cors-origin",
+          "category": "cors",
+          "question": "What three parts define an origin?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": true,
+          "latency_ms": 1.035,
+          "retrieved_ids": [
+            "7a0957bb9ae3d64e5151899d",
+            "e0e52dbdf613215e6957d334",
+            "f605d1002191159b411b26d9",
+            "de7b028ec9cb27d27ba45903",
+            "608167c10f355632051e49df"
+          ]
+        },
+        {
+          "id": "cors-ports",
+          "category": "cors",
+          "question": "Are localhost URLs with different ports the same origin?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.246,
+          "retrieved_ids": [
+            "7a0957bb9ae3d64e5151899d",
+            "4b8c5d589774ac2d10ad0c3b",
+            "f605d1002191159b411b26d9",
+            "e0e52dbdf613215e6957d334",
+            "9bc82ed790ae0989de810e03"
+          ]
+        },
+        {
+          "id": "cors-methods",
+          "category": "cors",
+          "question": "What HTTP methods does CORSMiddleware allow by default?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.106,
+          "retrieved_ids": [
+            "9bc82ed790ae0989de810e03",
+            "e0e52dbdf613215e6957d334",
+            "7072195e79fafc292c51bc4d",
+            "fdf54611b02800b2136d6279",
+            "4b93e9ea74288fb832ea20fb"
+          ]
+        },
+        {
+          "id": "dependency-call",
+          "category": "dependencies",
+          "question": "Should I call my dependency function when passing it to Depends?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.13,
+          "retrieved_ids": [
+            "82bf54319cd44604954b4253",
+            "8c18812e6eb19eb24a9df6f6",
+            "517fc59d9643ff1934db5da5",
+            "5ffd94ece2e7e1ffcb167ee0",
+            "cd8b9a20688279950577857a"
+          ]
+        },
+        {
+          "id": "dependency-share",
+          "category": "dependencies",
+          "question": "Can dependency injection share database connections?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.082,
+          "retrieved_ids": [
+            "7acbb7e7b134df2004f964e2",
+            "a5cd60ef1c1acd74cb2671ad",
+            "539d2e5d09d4c70e6bf83339",
+            "ee854c1fa6d3ce42d4fd3f94",
+            "8c18812e6eb19eb24a9df6f6"
+          ]
+        },
+        {
+          "id": "background-create",
+          "category": "background",
+          "question": "Who creates the BackgroundTasks object passed to the path operation?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.341,
+          "retrieved_ids": [
+            "24f7d5873e2b7bb6a7c877af",
+            "9f88143ce16cde639dc866c9",
+            "82d11b5b172010be9efd6bf4",
+            "f860e96bdd820d257719f117",
+            "c12049ed545224d1984f8895"
+          ]
+        },
+        {
+          "id": "background-heavy",
+          "category": "background",
+          "question": "What tool could handle heavy background computation outside the same process?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.229,
+          "retrieved_ids": [
+            "a726b4a89ce020dddd8a65f5",
+            "3c98c7cd39248b32dd21e4ec",
+            "8b0a87a8c21ea3832435f222",
+            "21263448f67cbdb6a4b703f7",
+            "82d11b5b172010be9efd6bf4"
+          ]
+        },
+        {
+          "id": "background-origin",
+          "category": "background",
+          "question": "Where does the BackgroundTasks class come from?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.235,
+          "retrieved_ids": [
+            "9f88143ce16cde639dc866c9",
+            "24f7d5873e2b7bb6a7c877af",
+            "288e0b7cdc0ae354b182a386",
+            "c12049ed545224d1984f8895",
+            "e4f115f092c843c06c5fd9a8"
+          ]
+        },
+        {
+          "id": "test-client",
+          "category": "testing",
+          "question": "How do I create a TestClient for my application?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.197,
+          "retrieved_ids": [
+            "2d03fde6ec77080dd12ac4a5",
+            "fdea33ddb8da91f558aabeb4",
+            "7bd3e225af1a5f4c4e9e59c0",
+            "0a549ec6bbed768526345975",
+            "50fa220ee7436b8230f67a09"
+          ]
+        },
+        {
+          "id": "test-json",
+          "category": "testing",
+          "question": "Should I pass Pydantic models directly to TestClient?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.132,
+          "retrieved_ids": [
+            "2d03fde6ec77080dd12ac4a5",
+            "050bb559b5e619d3dc5b4bbb",
+            "fdea33ddb8da91f558aabeb4",
+            "50fa220ee7436b8230f67a09",
+            "8a0dd3d893e8970dc3157f62"
+          ]
+        },
+        {
+          "id": "bearer-header",
+          "category": "security",
+          "question": "How does the frontend send the token to an authenticated endpoint?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.229,
+          "retrieved_ids": [
+            "57b3c0e7973d25983fe7df37",
+            "f0c2946325486d51aa6e6a3a",
+            "4b93e9ea74288fb832ea20fb",
+            "1219b49c54f2155fc82c03e6",
+            "1c7024b38619928409fdf2af"
+          ]
+        },
+        {
+          "id": "docker-exec",
+          "category": "deployment",
+          "question": "Which CMD form should I use in the Dockerfile?",
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 1.168,
+          "retrieved_ids": [
+            "d1e0f52bb66225975a9aa175",
+            "2885bf3f3e22150b04cbfaec",
+            "0a549ec6bbed768526345975",
+            "fdf54611b02800b2136d6279",
+            "0709cc52b9d6247879ea3a1d"
+          ]
+        },
+        {
+          "id": "weather",
+          "category": "unanswerable",
+          "question": "What is the weather in Mumbai tomorrow?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 1.151,
+          "retrieved_ids": [
+            "395eee2e524deec04d846503",
+            "7acbb7e7b134df2004f964e2",
+            "bff88e94c73388edcb6d5333",
+            "288e0b7cdc0ae354b182a386",
+            "5a3ab01cbb8bcaffb3cad935"
+          ]
+        },
+        {
+          "id": "salary",
+          "category": "unanswerable",
+          "question": "What salary does my employer pay me?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 0.949,
+          "retrieved_ids": [
+            "1432f927c98e648c3c527cb4",
+            "fdf54611b02800b2136d6279",
+            "ab3e5c1a9f10098cef5f3899",
+            "4b93e9ea74288fb832ea20fb",
+            "0a549ec6bbed768526345975"
+          ]
+        },
+        {
+          "id": "private-key",
+          "category": "unanswerable",
+          "question": "What is my production database password?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 1.036,
+          "retrieved_ids": [
+            "74be6011bffdb13c9aacabe1",
+            "f0c2946325486d51aa6e6a3a",
+            "0a549ec6bbed768526345975",
+            "7acbb7e7b134df2004f964e2",
+            "df2330bc60ad7a14b594e966"
+          ]
+        },
+        {
+          "id": "billing",
+          "category": "unanswerable",
+          "question": "What is my current cloud invoice total?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 1.045,
+          "retrieved_ids": [
+            "0a549ec6bbed768526345975",
+            "72ceecd795edeac3a194a925",
+            "f16e9bd3a0506bb1f75ad151",
+            "1432f927c98e648c3c527cb4",
+            "7bd3e225af1a5f4c4e9e59c0"
+          ]
+        },
+        {
+          "id": "sports",
+          "category": "unanswerable",
+          "question": "Who won the lunar marathon?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 1.076,
+          "retrieved_ids": [
+            "90e8ca30dedab35edb503efc",
+            "27296f8ba64fb57d4cf71303",
+            "0a6cbc459e2d331e3f658a6d",
+            "d77e16d57b9b4324b4755b0d",
+            "3c2998b3dd93aa41ba3ca114"
+          ]
+        },
+        {
+          "id": "company-policy",
+          "category": "unanswerable",
+          "question": "How many vacation days does my company allow?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 0.979,
+          "retrieved_ids": [
+            "e4f115f092c843c06c5fd9a8",
+            "0a549ec6bbed768526345975",
+            "e0e52dbdf613215e6957d334",
+            "7072195e79fafc292c51bc4d",
+            "bf57ac11873aacb61880b147"
+          ]
+        }
+      ]
+    },
+    "dense": {
+      "summary": {
+        "recall": 0.875,
+        "mrr": 0.7896,
+        "ndcg": 0.8104,
+        "unanswerable_abstention_rate": 0.6667,
+        "answerable_false_abstention_rate": 0,
+        "warm_p95_ms": 6.647,
+        "count": 30
+      },
+      "categories": {
+        "background": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.346,
+          "count": 3
+        },
+        "cors": {
+          "recall": 0.6667,
+          "mrr": 0.6667,
+          "ndcg": 0.6667,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.38,
+          "count": 3
+        },
+        "dependencies": {
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 0.8155,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 5.769,
+          "count": 2
+        },
+        "deployment": {
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 5.86,
+          "count": 1
+        },
+        "errors": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.625,
+          "count": 3
+        },
+        "parameters": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 5.872,
+          "count": 4
+        },
+        "security": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.647,
+          "count": 1
+        },
+        "testing": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 5.941,
+          "count": 2
+        },
+        "unanswerable": {
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "unanswerable_abstention_rate": 0.6667,
+          "answerable_false_abstention_rate": null,
+          "warm_p95_ms": 5.325,
+          "count": 6
+        },
+        "validation": {
+          "recall": 0.8,
+          "mrr": 0.49,
+          "ndcg": 0.5635,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 7.534,
+          "count": 5
+        }
+      },
+      "cases": [
+        {
+          "id": "optional-query",
+          "category": "parameters",
+          "question": "How do I make a query parameter optional?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.54,
+          "retrieved_ids": [
+            "fa2c90bdef752b461ad03d13",
+            "47a17fd4d63ed8d95bdf90f5",
+            "998dc10c9dab4bc9dd690530",
+            "a50494a0cb83cb66b514763a",
+            "ceac415cd114b8e78377eb3f"
+          ]
+        },
+        {
+          "id": "query-syntax",
+          "category": "parameters",
+          "question": "What separates query key-value pairs in a URL?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.872,
+          "retrieved_ids": [
+            "ceac415cd114b8e78377eb3f",
+            "998dc10c9dab4bc9dd690530",
+            "47a17fd4d63ed8d95bdf90f5",
+            "a50494a0cb83cb66b514763a",
+            "7601951602a87e6e0e74a6ae"
+          ]
+        },
+        {
+          "id": "query-default",
+          "category": "parameters",
+          "question": "Can query parameters have default values?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.666,
+          "retrieved_ids": [
+            "998dc10c9dab4bc9dd690530",
+            "47a17fd4d63ed8d95bdf90f5",
+            "fa2c90bdef752b461ad03d13",
+            "ceac415cd114b8e78377eb3f",
+            "0cd0cda85b79f702be2c8168"
+          ]
+        },
+        {
+          "id": "query-conversion",
+          "category": "parameters",
+          "question": "Are query parameter values converted to their declared Python types?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.614,
+          "retrieved_ids": [
+            "ceac415cd114b8e78377eb3f",
+            "7601951602a87e6e0e74a6ae",
+            "fa2c90bdef752b461ad03d13",
+            "3f094cc7eec867dd2cda795e",
+            "47a17fd4d63ed8d95bdf90f5"
+          ]
+        },
+        {
+          "id": "body-model",
+          "category": "validation",
+          "question": "Which class should my request data model inherit from?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.02,
+          "retrieved_ids": [
+            "0cd0cda85b79f702be2c8168",
+            "594d3dda0428fc7a2361801c",
+            "4357ce00255362e243583bb8",
+            "472024208bad1fe41554b7b9",
+            "3f094cc7eec867dd2cda795e"
+          ]
+        },
+        {
+          "id": "optional-body",
+          "category": "validation",
+          "question": "What makes a model attribute not required?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.792,
+          "retrieved_ids": [
+            "0cd0cda85b79f702be2c8168",
+            "47a17fd4d63ed8d95bdf90f5",
+            "d77e16d57b9b4324b4755b0d",
+            "3de501b607f413a54b36c5eb",
+            "69af9c2bfac5a1d4166b9e97"
+          ]
+        },
+        {
+          "id": "response-priority",
+          "category": "validation",
+          "question": "If I set both a return type and response_model, which one is used?",
+          "recall": 1.0,
+          "mrr": 0.25,
+          "ndcg": 0.43067655807339306,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 7.534,
+          "retrieved_ids": [
+            "df2330bc60ad7a14b594e966",
+            "36605d9c2177fc4dc8f9ce19",
+            "f233876fa41a976596d4b51c",
+            "eb543a5ca72b6c2813b3f1ed",
+            "1afef50c73f1b36b56ce397d"
+          ]
+        },
+        {
+          "id": "disable-response",
+          "category": "validation",
+          "question": "How can I disable creating a response model for a path operation?",
+          "recall": 1.0,
+          "mrr": 0.2,
+          "ndcg": 0.38685280723454163,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.119,
+          "retrieved_ids": [
+            "3de501b607f413a54b36c5eb",
+            "dad00a2ee6db38be1c797a4d",
+            "d77e16d57b9b4324b4755b0d",
+            "917bdeac9b0fbae920b3e804",
+            "eb543a5ca72b6c2813b3f1ed"
+          ]
+        },
+        {
+          "id": "response-filter",
+          "category": "validation",
+          "question": "Does the return type limit which output fields are returned?",
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.684,
+          "retrieved_ids": [
+            "288e0b7cdc0ae354b182a386",
+            "353de85c368884ffd1f90974",
+            "f233876fa41a976596d4b51c",
+            "ff144321d9b46cccb13e50fa",
+            "4f19747d1648aa5029d580fb"
+          ]
+        },
+        {
+          "id": "http-raise",
+          "category": "errors",
+          "question": "Do I return HTTPException or raise it?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.954,
+          "retrieved_ids": [
+            "3c2998b3dd93aa41ba3ca114",
+            "48244378aef80b7adc1df5ff",
+            "2565c05b136e77fbb48f547a",
+            "39737558735e3c35db62a6ba",
+            "ddf6bfbca0bd33e4092de645"
+          ]
+        },
+        {
+          "id": "error-detail",
+          "category": "errors",
+          "question": "Can HTTPException detail contain a dictionary instead of a string?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.625,
+          "retrieved_ids": [
+            "ddf6bfbca0bd33e4092de645",
+            "2565c05b136e77fbb48f547a",
+            "48244378aef80b7adc1df5ff",
+            "3c2998b3dd93aa41ba3ca114",
+            "d46f6c6be4a9b4061c4c6127"
+          ]
+        },
+        {
+          "id": "error-handler",
+          "category": "errors",
+          "question": "How do I register a custom exception handler?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.428,
+          "retrieved_ids": [
+            "e4292f9f143d9e4764f5532e",
+            "2565c05b136e77fbb48f547a",
+            "d3536b657de0fa5cee271352",
+            "472024208bad1fe41554b7b9",
+            "39737558735e3c35db62a6ba"
+          ]
+        },
+        {
+          "id": "cors-origin",
+          "category": "cors",
+          "question": "What three parts define an origin?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.578,
+          "retrieved_ids": [
+            "7a0957bb9ae3d64e5151899d",
+            "e0e52dbdf613215e6957d334",
+            "906e0397bad202d11cd24dbe",
+            "e918c03b2e1de9390ccbe5a6",
+            "608167c10f355632051e49df"
+          ]
+        },
+        {
+          "id": "cors-ports",
+          "category": "cors",
+          "question": "Are localhost URLs with different ports the same origin?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.38,
+          "retrieved_ids": [
+            "7a0957bb9ae3d64e5151899d",
+            "4b8c5d589774ac2d10ad0c3b",
+            "d6f0e9abee9e0156a4b98233",
+            "0c21dc36d193e0890efd8a25",
+            "608167c10f355632051e49df"
+          ]
+        },
+        {
+          "id": "cors-methods",
+          "category": "cors",
+          "question": "What HTTP methods does CORSMiddleware allow by default?",
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.346,
+          "retrieved_ids": [
+            "9bc82ed790ae0989de810e03",
+            "7072195e79fafc292c51bc4d",
+            "0c21dc36d193e0890efd8a25",
+            "608167c10f355632051e49df",
+            "8007efa98f4a9287a37eba4e"
+          ]
+        },
+        {
+          "id": "dependency-call",
+          "category": "dependencies",
+          "question": "Should I call my dependency function when passing it to Depends?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.769,
+          "retrieved_ids": [
+            "82bf54319cd44604954b4253",
+            "22e50cea00b0e66b0f8f25ae",
+            "c5c296f6a9cdec25e3fae5b5",
+            "5ffd94ece2e7e1ffcb167ee0",
+            "9513c8208cd8e6998795f5d1"
+          ]
+        },
+        {
+          "id": "dependency-share",
+          "category": "dependencies",
+          "question": "Can dependency injection share database connections?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.584,
+          "retrieved_ids": [
+            "1432f927c98e648c3c527cb4",
+            "7acbb7e7b134df2004f964e2",
+            "539d2e5d09d4c70e6bf83339",
+            "dfece7a4427dea68529683ae",
+            "a5cd60ef1c1acd74cb2671ad"
+          ]
+        },
+        {
+          "id": "background-create",
+          "category": "background",
+          "question": "Who creates the BackgroundTasks object passed to the path operation?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.346,
+          "retrieved_ids": [
+            "24f7d5873e2b7bb6a7c877af",
+            "c12049ed545224d1984f8895",
+            "9f88143ce16cde639dc866c9",
+            "f860e96bdd820d257719f117",
+            "906e0397bad202d11cd24dbe"
+          ]
+        },
+        {
+          "id": "background-heavy",
+          "category": "background",
+          "question": "What tool could handle heavy background computation outside the same process?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.698,
+          "retrieved_ids": [
+            "a726b4a89ce020dddd8a65f5",
+            "9f88143ce16cde639dc866c9",
+            "c12049ed545224d1984f8895",
+            "24f7d5873e2b7bb6a7c877af",
+            "4a4b6d548dd3b984c70dc01b"
+          ]
+        },
+        {
+          "id": "background-origin",
+          "category": "background",
+          "question": "Where does the BackgroundTasks class come from?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.898,
+          "retrieved_ids": [
+            "9f88143ce16cde639dc866c9",
+            "24f7d5873e2b7bb6a7c877af",
+            "c12049ed545224d1984f8895",
+            "3c98c7cd39248b32dd21e4ec",
+            "82d11b5b172010be9efd6bf4"
+          ]
+        },
+        {
+          "id": "test-client",
+          "category": "testing",
+          "question": "How do I create a TestClient for my application?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.697,
+          "retrieved_ids": [
+            "2d03fde6ec77080dd12ac4a5",
+            "fdea33ddb8da91f558aabeb4",
+            "50fa220ee7436b8230f67a09",
+            "050bb559b5e619d3dc5b4bbb",
+            "d8efd9143a34d660b1ac9dbe"
+          ]
+        },
+        {
+          "id": "test-json",
+          "category": "testing",
+          "question": "Should I pass Pydantic models directly to TestClient?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.941,
+          "retrieved_ids": [
+            "050bb559b5e619d3dc5b4bbb",
+            "0e377db4cd3bd9e90b28722e",
+            "fdea33ddb8da91f558aabeb4",
+            "2d03fde6ec77080dd12ac4a5",
+            "399d1e015318751e538c2e53"
+          ]
+        },
+        {
+          "id": "bearer-header",
+          "category": "security",
+          "question": "How does the frontend send the token to an authenticated endpoint?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.647,
+          "retrieved_ids": [
+            "57b3c0e7973d25983fe7df37",
+            "4b8c5d589774ac2d10ad0c3b",
+            "139ce53d3b1264b0cbb29bb5",
+            "4b93e9ea74288fb832ea20fb",
+            "f0c2946325486d51aa6e6a3a"
+          ]
+        },
+        {
+          "id": "docker-exec",
+          "category": "deployment",
+          "question": "Which CMD form should I use in the Dockerfile?",
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.86,
+          "retrieved_ids": [
+            "d1e0f52bb66225975a9aa175",
+            "2885bf3f3e22150b04cbfaec",
+            "2efaa21f738b77babe52e8f6",
+            "0709cc52b9d6247879ea3a1d",
+            "9853c64c673cc1d5460a4d2e"
+          ]
+        },
+        {
+          "id": "weather",
+          "category": "unanswerable",
+          "question": "What is the weather in Mumbai tomorrow?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 4.628,
+          "retrieved_ids": [
+            "10db27b5d6af3886c70ddefb",
+            "08bef27cd65f177b01837fba",
+            "3037bd518dbc55411d06a066",
+            "e83ea8841f7f73a09a522639",
+            "2885bf3f3e22150b04cbfaec"
+          ]
+        },
+        {
+          "id": "salary",
+          "category": "unanswerable",
+          "question": "What salary does my employer pay me?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 4.623,
+          "retrieved_ids": [
+            "10db27b5d6af3886c70ddefb",
+            "4357ce00255362e243583bb8",
+            "d4f2f5bfe134f71026180b03",
+            "de5516cf838470e1f2d7a1b6",
+            "d77e16d57b9b4324b4755b0d"
+          ]
+        },
+        {
+          "id": "private-key",
+          "category": "unanswerable",
+          "question": "What is my production database password?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": false,
+          "latency_ms": 4.532,
+          "retrieved_ids": [
+            "3334d5b7202929e5e927eb44",
+            "74be6011bffdb13c9aacabe1",
+            "30061745aac2da95209e25cc",
+            "f0c2946325486d51aa6e6a3a",
+            "139ce53d3b1264b0cbb29bb5"
+          ]
+        },
+        {
+          "id": "billing",
+          "category": "unanswerable",
+          "question": "What is my current cloud invoice total?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": false,
+          "latency_ms": 4.876,
+          "retrieved_ids": [
+            "13c7aafac8537323df725855",
+            "fb0997a58781ae1097f60868",
+            "10db27b5d6af3886c70ddefb",
+            "1da643e8abcf22accb67abdd",
+            "2885bf3f3e22150b04cbfaec"
+          ]
+        },
+        {
+          "id": "sports",
+          "category": "unanswerable",
+          "question": "Who won the lunar marathon?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 4.082,
+          "retrieved_ids": [
+            "9f88143ce16cde639dc866c9",
+            "517fc59d9643ff1934db5da5",
+            "3c98c7cd39248b32dd21e4ec",
+            "f16e9bd3a0506bb1f75ad151",
+            "63c11050ee9bb25ba33a0440"
+          ]
+        },
+        {
+          "id": "company-policy",
+          "category": "unanswerable",
+          "question": "How many vacation days does my company allow?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 5.325,
+          "retrieved_ids": [
+            "de5516cf838470e1f2d7a1b6",
+            "b327be64e6e42cf8197306c8",
+            "70b7cf60d8cef4dec6bcf17e",
+            "a50494a0cb83cb66b514763a",
+            "3c98c7cd39248b32dd21e4ec"
+          ]
+        }
+      ]
+    },
+    "hybrid": {
+      "summary": {
+        "recall": 0.9583,
+        "mrr": 0.7986,
+        "ndcg": 0.8398,
+        "unanswerable_abstention_rate": 0.6667,
+        "answerable_false_abstention_rate": 0,
+        "warm_p95_ms": 6.976,
+        "count": 30
+      },
+      "categories": {
+        "background": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.752,
+          "count": 3
+        },
+        "cors": {
+          "recall": 1.0,
+          "mrr": 0.7778,
+          "ndcg": 0.8333,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.788,
+          "count": 3
+        },
+        "dependencies": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.067,
+          "count": 2
+        },
+        "deployment": {
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.313,
+          "count": 1
+        },
+        "errors": {
+          "recall": 1.0,
+          "mrr": 0.8333,
+          "ndcg": 0.877,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.791,
+          "count": 3
+        },
+        "parameters": {
+          "recall": 1.0,
+          "mrr": 0.75,
+          "ndcg": 0.8155,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.002,
+          "count": 4
+        },
+        "security": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.976,
+          "count": 1
+        },
+        "testing": {
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 6.237,
+          "count": 2
+        },
+        "unanswerable": {
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "unanswerable_abstention_rate": 0.6667,
+          "answerable_false_abstention_rate": null,
+          "warm_p95_ms": 5.489,
+          "count": 6
+        },
+        "validation": {
+          "recall": 1.0,
+          "mrr": 0.6667,
+          "ndcg": 0.7524,
+          "unanswerable_abstention_rate": null,
+          "answerable_false_abstention_rate": 0,
+          "warm_p95_ms": 7.919,
+          "count": 5
+        }
+      },
+      "cases": [
+        {
+          "id": "optional-query",
+          "category": "parameters",
+          "question": "How do I make a query parameter optional?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.675,
+          "retrieved_ids": [
+            "47a17fd4d63ed8d95bdf90f5",
+            "fa2c90bdef752b461ad03d13",
+            "a50494a0cb83cb66b514763a",
+            "0cd0cda85b79f702be2c8168",
+            "ceac415cd114b8e78377eb3f"
+          ]
+        },
+        {
+          "id": "query-syntax",
+          "category": "parameters",
+          "question": "What separates query key-value pairs in a URL?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.002,
+          "retrieved_ids": [
+            "ceac415cd114b8e78377eb3f",
+            "47a17fd4d63ed8d95bdf90f5",
+            "998dc10c9dab4bc9dd690530",
+            "a50494a0cb83cb66b514763a",
+            "7601951602a87e6e0e74a6ae"
+          ]
+        },
+        {
+          "id": "query-default",
+          "category": "parameters",
+          "question": "Can query parameters have default values?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.872,
+          "retrieved_ids": [
+            "47a17fd4d63ed8d95bdf90f5",
+            "998dc10c9dab4bc9dd690530",
+            "a50494a0cb83cb66b514763a",
+            "fa2c90bdef752b461ad03d13",
+            "ceac415cd114b8e78377eb3f"
+          ]
+        },
+        {
+          "id": "query-conversion",
+          "category": "parameters",
+          "question": "Are query parameter values converted to their declared Python types?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.93,
+          "retrieved_ids": [
+            "ceac415cd114b8e78377eb3f",
+            "7601951602a87e6e0e74a6ae",
+            "47a17fd4d63ed8d95bdf90f5",
+            "3f094cc7eec867dd2cda795e",
+            "fa2c90bdef752b461ad03d13"
+          ]
+        },
+        {
+          "id": "body-model",
+          "category": "validation",
+          "question": "Which class should my request data model inherit from?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.196,
+          "retrieved_ids": [
+            "594d3dda0428fc7a2361801c",
+            "0cd0cda85b79f702be2c8168",
+            "353de85c368884ffd1f90974",
+            "472024208bad1fe41554b7b9",
+            "f233876fa41a976596d4b51c"
+          ]
+        },
+        {
+          "id": "optional-body",
+          "category": "validation",
+          "question": "What makes a model attribute not required?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.237,
+          "retrieved_ids": [
+            "0cd0cda85b79f702be2c8168",
+            "47a17fd4d63ed8d95bdf90f5",
+            "69af9c2bfac5a1d4166b9e97",
+            "3de501b607f413a54b36c5eb",
+            "d4f2f5bfe134f71026180b03"
+          ]
+        },
+        {
+          "id": "response-priority",
+          "category": "validation",
+          "question": "If I set both a return type and response_model, which one is used?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 7.919,
+          "retrieved_ids": [
+            "eb543a5ca72b6c2813b3f1ed",
+            "f233876fa41a976596d4b51c",
+            "1afef50c73f1b36b56ce397d",
+            "36605d9c2177fc4dc8f9ce19",
+            "df2330bc60ad7a14b594e966"
+          ]
+        },
+        {
+          "id": "disable-response",
+          "category": "validation",
+          "question": "How can I disable creating a response model for a path operation?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.489,
+          "retrieved_ids": [
+            "3de501b607f413a54b36c5eb",
+            "eb543a5ca72b6c2813b3f1ed",
+            "917bdeac9b0fbae920b3e804",
+            "d77e16d57b9b4324b4755b0d",
+            "dad00a2ee6db38be1c797a4d"
+          ]
+        },
+        {
+          "id": "response-filter",
+          "category": "validation",
+          "question": "Does the return type limit which output fields are returned?",
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.063,
+          "retrieved_ids": [
+            "288e0b7cdc0ae354b182a386",
+            "f233876fa41a976596d4b51c",
+            "de7b028ec9cb27d27ba45903",
+            "ff144321d9b46cccb13e50fa",
+            "353de85c368884ffd1f90974"
+          ]
+        },
+        {
+          "id": "http-raise",
+          "category": "errors",
+          "question": "Do I return HTTPException or raise it?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.862,
+          "retrieved_ids": [
+            "3c2998b3dd93aa41ba3ca114",
+            "48244378aef80b7adc1df5ff",
+            "d46f6c6be4a9b4061c4c6127",
+            "2565c05b136e77fbb48f547a",
+            "d3536b657de0fa5cee271352"
+          ]
+        },
+        {
+          "id": "error-detail",
+          "category": "errors",
+          "question": "Can HTTPException detail contain a dictionary instead of a string?",
+          "recall": 1.0,
+          "mrr": 0.5,
+          "ndcg": 0.6309297535714575,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.791,
+          "retrieved_ids": [
+            "2565c05b136e77fbb48f547a",
+            "ddf6bfbca0bd33e4092de645",
+            "d46f6c6be4a9b4061c4c6127",
+            "48244378aef80b7adc1df5ff",
+            "472024208bad1fe41554b7b9"
+          ]
+        },
+        {
+          "id": "error-handler",
+          "category": "errors",
+          "question": "How do I register a custom exception handler?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.642,
+          "retrieved_ids": [
+            "e4292f9f143d9e4764f5532e",
+            "d3536b657de0fa5cee271352",
+            "d46f6c6be4a9b4061c4c6127",
+            "9b3c8d367ea44974d6ba0d04",
+            "472024208bad1fe41554b7b9"
+          ]
+        },
+        {
+          "id": "cors-origin",
+          "category": "cors",
+          "question": "What three parts define an origin?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.79,
+          "retrieved_ids": [
+            "7a0957bb9ae3d64e5151899d",
+            "e0e52dbdf613215e6957d334",
+            "f605d1002191159b411b26d9",
+            "608167c10f355632051e49df",
+            "9bc82ed790ae0989de810e03"
+          ]
+        },
+        {
+          "id": "cors-ports",
+          "category": "cors",
+          "question": "Are localhost URLs with different ports the same origin?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.788,
+          "retrieved_ids": [
+            "7a0957bb9ae3d64e5151899d",
+            "4b8c5d589774ac2d10ad0c3b",
+            "9bc82ed790ae0989de810e03",
+            "e0e52dbdf613215e6957d334",
+            "b327be64e6e42cf8197306c8"
+          ]
+        },
+        {
+          "id": "cors-methods",
+          "category": "cors",
+          "question": "What HTTP methods does CORSMiddleware allow by default?",
+          "recall": 1.0,
+          "mrr": 0.3333333333333333,
+          "ndcg": 0.5,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.62,
+          "retrieved_ids": [
+            "9bc82ed790ae0989de810e03",
+            "7072195e79fafc292c51bc4d",
+            "e0e52dbdf613215e6957d334",
+            "0c21dc36d193e0890efd8a25",
+            "4b8c5d589774ac2d10ad0c3b"
+          ]
+        },
+        {
+          "id": "dependency-call",
+          "category": "dependencies",
+          "question": "Should I call my dependency function when passing it to Depends?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.067,
+          "retrieved_ids": [
+            "82bf54319cd44604954b4253",
+            "5ffd94ece2e7e1ffcb167ee0",
+            "8c18812e6eb19eb24a9df6f6",
+            "517fc59d9643ff1934db5da5",
+            "cd8b9a20688279950577857a"
+          ]
+        },
+        {
+          "id": "dependency-share",
+          "category": "dependencies",
+          "question": "Can dependency injection share database connections?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 4.896,
+          "retrieved_ids": [
+            "7acbb7e7b134df2004f964e2",
+            "539d2e5d09d4c70e6bf83339",
+            "a5cd60ef1c1acd74cb2671ad",
+            "1432f927c98e648c3c527cb4",
+            "ee854c1fa6d3ce42d4fd3f94"
+          ]
+        },
+        {
+          "id": "background-create",
+          "category": "background",
+          "question": "Who creates the BackgroundTasks object passed to the path operation?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.752,
+          "retrieved_ids": [
+            "24f7d5873e2b7bb6a7c877af",
+            "9f88143ce16cde639dc866c9",
+            "c12049ed545224d1984f8895",
+            "f860e96bdd820d257719f117",
+            "82d11b5b172010be9efd6bf4"
+          ]
+        },
+        {
+          "id": "background-heavy",
+          "category": "background",
+          "question": "What tool could handle heavy background computation outside the same process?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.446,
+          "retrieved_ids": [
+            "a726b4a89ce020dddd8a65f5",
+            "21263448f67cbdb6a4b703f7",
+            "3c98c7cd39248b32dd21e4ec",
+            "9f88143ce16cde639dc866c9",
+            "82d11b5b172010be9efd6bf4"
+          ]
+        },
+        {
+          "id": "background-origin",
+          "category": "background",
+          "question": "Where does the BackgroundTasks class come from?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 5.305,
+          "retrieved_ids": [
+            "9f88143ce16cde639dc866c9",
+            "24f7d5873e2b7bb6a7c877af",
+            "c12049ed545224d1984f8895",
+            "e4f115f092c843c06c5fd9a8",
+            "82d11b5b172010be9efd6bf4"
+          ]
+        },
+        {
+          "id": "test-client",
+          "category": "testing",
+          "question": "How do I create a TestClient for my application?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.066,
+          "retrieved_ids": [
+            "2d03fde6ec77080dd12ac4a5",
+            "fdea33ddb8da91f558aabeb4",
+            "50fa220ee7436b8230f67a09",
+            "050bb559b5e619d3dc5b4bbb",
+            "fb39fc0216f06d402d692403"
+          ]
+        },
+        {
+          "id": "test-json",
+          "category": "testing",
+          "question": "Should I pass Pydantic models directly to TestClient?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.237,
+          "retrieved_ids": [
+            "050bb559b5e619d3dc5b4bbb",
+            "2d03fde6ec77080dd12ac4a5",
+            "fdea33ddb8da91f558aabeb4",
+            "399d1e015318751e538c2e53",
+            "50fa220ee7436b8230f67a09"
+          ]
+        },
+        {
+          "id": "bearer-header",
+          "category": "security",
+          "question": "How does the frontend send the token to an authenticated endpoint?",
+          "recall": 1.0,
+          "mrr": 1.0,
+          "ndcg": 1.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.976,
+          "retrieved_ids": [
+            "57b3c0e7973d25983fe7df37",
+            "f0c2946325486d51aa6e6a3a",
+            "4b93e9ea74288fb832ea20fb",
+            "4b8c5d589774ac2d10ad0c3b",
+            "139ce53d3b1264b0cbb29bb5"
+          ]
+        },
+        {
+          "id": "docker-exec",
+          "category": "deployment",
+          "question": "Which CMD form should I use in the Dockerfile?",
+          "recall": 0.0,
+          "mrr": 0,
+          "ndcg": 0.0,
+          "expected_abstention": false,
+          "abstained": false,
+          "latency_ms": 6.313,
+          "retrieved_ids": [
+            "d1e0f52bb66225975a9aa175",
+            "2885bf3f3e22150b04cbfaec",
+            "0709cc52b9d6247879ea3a1d",
+            "0a549ec6bbed768526345975",
+            "2efaa21f738b77babe52e8f6"
+          ]
+        },
+        {
+          "id": "weather",
+          "category": "unanswerable",
+          "question": "What is the weather in Mumbai tomorrow?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 5.028,
+          "retrieved_ids": [
+            "bff88e94c73388edcb6d5333",
+            "7bd3e225af1a5f4c4e9e59c0",
+            "714a5d647c48eeb34b965b5e",
+            "5ffd94ece2e7e1ffcb167ee0",
+            "10db27b5d6af3886c70ddefb"
+          ]
+        },
+        {
+          "id": "salary",
+          "category": "unanswerable",
+          "question": "What salary does my employer pay me?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 4.868,
+          "retrieved_ids": [
+            "4b93e9ea74288fb832ea20fb",
+            "ab3e5c1a9f10098cef5f3899",
+            "30061745aac2da95209e25cc",
+            "74be6011bffdb13c9aacabe1",
+            "10db27b5d6af3886c70ddefb"
+          ]
+        },
+        {
+          "id": "private-key",
+          "category": "unanswerable",
+          "question": "What is my production database password?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": false,
+          "latency_ms": 4.761,
+          "retrieved_ids": [
+            "74be6011bffdb13c9aacabe1",
+            "f0c2946325486d51aa6e6a3a",
+            "3334d5b7202929e5e927eb44",
+            "30061745aac2da95209e25cc",
+            "139ce53d3b1264b0cbb29bb5"
+          ]
+        },
+        {
+          "id": "billing",
+          "category": "unanswerable",
+          "question": "What is my current cloud invoice total?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": false,
+          "latency_ms": 5.272,
+          "retrieved_ids": [
+            "3adf6b4430a4cfc27e4db2bd",
+            "e7c9466be8bcd631e70134f2",
+            "4b93e9ea74288fb832ea20fb",
+            "0a549ec6bbed768526345975",
+            "13c7aafac8537323df725855"
+          ]
+        },
+        {
+          "id": "sports",
+          "category": "unanswerable",
+          "question": "Who won the lunar marathon?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 4.24,
+          "retrieved_ids": [
+            "f860e96bdd820d257719f117",
+            "90e8ca30dedab35edb503efc",
+            "9f88143ce16cde639dc866c9",
+            "27296f8ba64fb57d4cf71303",
+            "517fc59d9643ff1934db5da5"
+          ]
+        },
+        {
+          "id": "company-policy",
+          "category": "unanswerable",
+          "question": "How many vacation days does my company allow?",
+          "recall": null,
+          "mrr": null,
+          "ndcg": null,
+          "expected_abstention": true,
+          "abstained": true,
+          "latency_ms": 5.489,
+          "retrieved_ids": [
+            "0a549ec6bbed768526345975",
+            "7072195e79fafc292c51bc4d",
+            "bf57ac11873aacb61880b147",
+            "de5516cf838470e1f2d7a1b6",
+            "e4f115f092c843c06c5fd9a8"
+          ]
+        }
+      ]
+    }
+  },
+  "scope": "Retrieval and abstention only. Does not measure generated-answer accuracy."
+}

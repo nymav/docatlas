@@ -1,0 +1,42 @@
+name: Verify DocAtlas
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -c requirements.lock '.[dev]'
+      - run: ruff check src tests scripts
+      - run: ruff format --check src tests scripts
+      - run: pytest -q
+      - run: python -m pip check
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t docatlas:test .
+      - name: Smoke test container and authorization
+        run: |
+          docker run -d --name docatlas -p 127.0.0.1:8000:8000 -e DOCATLAS_API_KEY=ci-test-key -e DOCATLAS_EMBEDDINGS=bm25 docatlas:test
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8000/health; then break; fi
+            sleep 2
+          done
+          curl -fsS http://127.0.0.1:8000/health
+          curl -fsS -H 'X-API-Key: ci-test-key' http://127.0.0.1:8000/api/config
+          test "$(curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8000/api/documents)" = 401
+      - if: always()
+        run: docker logs docatlas || true
