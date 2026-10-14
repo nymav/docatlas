@@ -65,6 +65,28 @@ def test_extraction_and_chunk_provenance():
 
 
 @pytest.mark.parametrize(
+    "lower_name,upper_name,data",
+    [
+        ("sample.md", "sample.MD", b"# Heading\nCaf\xc3\xa9 content."),
+        ("sample.txt", "sample.TXT", b"Plain UTF-8 text: caf\xc3\xa9."),
+        (
+            "sample.html",
+            "sample.HTML",
+            b"<h1>Title</h1><script>secret</script><p>Visible content</p>",
+        ),
+    ],
+)
+def test_text_extraction_normalizes_case_insensitive_suffixes(lower_name, upper_name, data):
+    assert extract(lower_name, data) == extract(upper_name, data)
+
+    if lower_name.endswith(".html"):
+        text = extract(upper_name, data)[0][1]
+        assert "<p>" not in text
+        assert "Visible content" in text
+        assert "secret" not in text
+
+
+@pytest.mark.parametrize(
     "name,data", [("a.exe", b"x"), ("a.txt", b"\xff"), ("a.md", b" "), ("a.pdf", b"garbage")]
 )
 def test_invalid_inputs(name, data):
