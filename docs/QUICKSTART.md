@@ -40,6 +40,7 @@ content is fictional. Replace it with documents you are permitted to process.
 
 - **Command not found:** activate `.venv` and repeat the installation command.
 - **Port 8000 is in use:** run `docatlas serve --port 8001` and open that port instead.
+- **Keep distinct documents separate:** a filename identifies a document. Give two sources distinct names, such as `handbook-team-a.md` and `handbook-team-b.md`; ingesting updated content under an existing filename replaces that document's indexed content. Reuse the same filename only when you intend to replace it. See [Architecture and decisions](../README.md#architecture-and-decisions).
 - **Scanned or encrypted PDF:** provide unencrypted text-based files; OCR is a separate step.
 - **Neural retrieval unavailable:** use the default BM25 mode first; install the
   semantic extra and configure `DOCATLAS_EMBEDDINGS=fastembed` before ingestion if needed.
